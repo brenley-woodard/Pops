@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
+import Home from './components/Home/Home.js';
+import Collection from './components/Collection/Collection.js';
+import PopForm from './components/PopForm/PopForm.js';
+import Wishlist from './components/Wishlist/Wishlist.js';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        <Route exact path="/" component={Home}/>
+        <Route exact path="/collection" component={Collection}/>
+        <Route exact path="/popform" component={PopForm}/>
+        <Route exact path="/wishlist" component={Wishlist}/>
+      </Switch>
     </div>
   );
 }
